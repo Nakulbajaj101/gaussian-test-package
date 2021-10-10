@@ -1,12 +1,13 @@
 import setuptools
 from pathlib import Path
 
-ROOT_DIR = Path(__file__).parent
-REQUIREMENTS_FILE = ROOT_DIR / 'requirements.txt'
+ROOT_DIR = Path(__file__).parent.resolve()
+REQUIREMENTS_DIR = ROOT_DIR / 'requirements'
+print(ROOT_DIR)
 
 
-def read_requirements():
-    with open(REQUIREMENTS_FILE, 'r') as file:
+def read_requirements(fname="requirements.txt"):
+    with open(REQUIREMENTS_DIR / fname, 'r') as file:
         return file.read().splitlines()
 
 
